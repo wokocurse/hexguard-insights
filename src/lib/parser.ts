@@ -41,11 +41,16 @@ function normalizeEvent(raw: Record<string, unknown>): NormalizedEvent | null {
   const query = r.query || r.domain || r.dns_query || r.qname || r.name || '';
   if (!query) return null;
 
+  const destPort = r.dest_port || r.port || r.destination_port || '';
+
   return {
     timestamp: r.timestamp || r.time || r.date || new Date().toISOString(),
     src_ip: r.src_ip || r.source_ip || r.client_ip || r.ip || r.src || 'unknown',
     query,
     client: r.client || r.host || r.hostname || undefined,
     event_type: r.event_type || r.type || 'DNS',
+    dest_port: destPort ? parseInt(destPort, 10) || undefined : undefined,
+    status: r.status || undefined,
+    username: r.username || r.user || undefined,
   };
 }

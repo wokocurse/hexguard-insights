@@ -4,6 +4,9 @@ export interface NormalizedEvent {
   query: string;
   client?: string;
   event_type: string;
+  dest_port?: number;
+  status?: string;
+  username?: string;
 }
 
 export interface SuspiciousEvent extends NormalizedEvent {
