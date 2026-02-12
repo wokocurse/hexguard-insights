@@ -68,6 +68,8 @@ export function generateMarkdownReport(incident: Incident): string {
         case 'LONG_QUERY': return '- Abnormally long DNS query string, commonly used to smuggle data through DNS';
         case 'EXCESSIVE_SUBDOMAINS': return '- Excessive number of subdomain labels, a hallmark of DNS-based C2 channels';
         case 'LONG_LABEL': return '- Individual DNS label exceeds normal length, suggesting encoded payload';
+        case 'BRUTE_FORCE': return '- Multiple rapid failed authentication attempts from the same source, indicative of credential stuffing or brute force attack';
+        case 'PORT_SCAN': return '- Rapid connection attempts to many distinct ports on a target host, consistent with network reconnaissance and port scanning';
         default: return `- ${d}`;
       }
     }),

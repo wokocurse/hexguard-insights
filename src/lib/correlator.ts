@@ -11,6 +11,14 @@ function getMitreTags(detections: string[]): string[] {
       tags.add('Command and Control');
       tags.add('Discovery');
     }
+    if (d === 'BRUTE_FORCE') {
+      tags.add('Credential Access');
+      tags.add('Initial Access');
+    }
+    if (d === 'PORT_SCAN') {
+      tags.add('Discovery');
+      tags.add('Reconnaissance');
+    }
   }
   return Array.from(tags);
 }

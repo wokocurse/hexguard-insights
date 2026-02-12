@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shield, LayoutDashboard, List, Activity, Settings, Bell } from 'lucide-react';
+import { Shield, LayoutDashboard, List, Settings } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
@@ -21,7 +21,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <nav className="flex-1 p-4 space-y-1">
           <NavItem to="/" icon={<LayoutDashboard size={18} />}>Dashboard</NavItem>
           <NavItem to="/incidents" icon={<List size={18} />}>Incidents</NavItem>
-          <NavItem to="/monitoring" icon={<Activity size={18} />}>Live Monitoring</NavItem>
+          
         </nav>
 
         <div className="p-4 border-t border-sidebar-border/50 space-y-1">
